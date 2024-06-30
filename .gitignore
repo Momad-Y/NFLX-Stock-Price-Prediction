@@ -164,3 +164,7 @@ cython_debug/
 
 # Others
 Old/
+*.docx
+*.pdf
+*.rar
+Rubrics.txt
