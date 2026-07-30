@@ -6,6 +6,30 @@ A comprehensive machine learning project for predicting Netflix (NFLX) stock pri
 
 This project analyzes Netflix stock data from **January 2, 2018 to December 30, 2022** (1,259 trading days) and implements three machine learning models to predict closing prices using Open, High, and Low price features.
 
+## Rubrics
+
+1. **Discussion**
+2. **Implementation**
+    1. **Dataset Validation** (within the scope or not) [10]
+        1. Statistical Analysis
+        2. **Data Cleaning**
+            1. Insert imputer (fill the missing values)
+            2. Encode if required
+            3. Drop unnecessary columns
+    2. **Visualization** [20]
+        1. Univariate Exploration
+        2. Bivariate Exploration
+        3. Multivariate Exploration
+    3. **Preprocessing** [30]
+        1. Feature normalization
+        2. K-Fold utilization
+        3. Regularization test [LASSO, ELASTIC NET]
+    4. **Evaluation** [30]
+        1. Compare between two different models and choose the best
+        2. Apply GridSearch CV
+    - Extra Work Bonus for Better Effort
+3. **Documentation in notebooks** [10]
+
 ## Dataset
 
 ### Data Source and Description
@@ -14,12 +38,12 @@ The dataset was collected from [Yahoo Finance](https://finance.yahoo.com/) and c
 
 ### Dataset Attributes
 
--   **Open**: The price from the first transaction of a business day
--   **High**: The highest price at which a stock is traded during the business day
--   **Low**: The lowest price at which a stock is traded during the business day
--   **Close**: The last price anyone paid for a share of stock during a business day
--   **Adj Close**: The closing price after adjustments for all applicable splits and dividend distributions
--   **Volume**: The number of shares traded in a stock (indicates market strength)
+- **Open**: The price from the first transaction of a business day
+- **High**: The highest price at which a stock is traded during the business day
+- **Low**: The lowest price at which a stock is traded during the business day
+- **Close**: The last price anyone paid for a share of stock during a business day
+- **Adj Close**: The closing price after adjustments for all applicable splits and dividend distributions
+- **Volume**: The number of shares traded in a stock (indicates market strength)
 
 All prices are in USD.
 
@@ -51,66 +75,66 @@ _Netflix stock price evolution (2018-2022) showing volatility from ~$200 to ~$70
 
 ### Data Preprocessing
 
--   **Features Used**: Open, High, Low prices
--   **Target Variable**: Close price
--   **Train/Test Split**: 80/20 ratio
--   **Data Cleaning**: Removed Volume and Adj Close columns (redundant)
+- **Features Used**: Open, High, Low prices
+- **Target Variable**: Close price
+- **Train/Test Split**: 80/20 ratio
+- **Data Cleaning**: Removed Volume and Adj Close columns (redundant)
 
 ### Model Evaluation Metrics
 
--   **MSE (Mean Squared Error)**: Primary accuracy metric
--   **MAPE (Mean Absolute Percentage Error)**: Stock prediction standard
--   **R² Score**: Coefficient of determination
--   **Training Time**: Computational efficiency measure
+- **MSE (Mean Squared Error)**: Primary accuracy metric
+- **MAPE (Mean Absolute Percentage Error)**: Stock prediction standard
+- **R² Score**: Coefficient of determination
+- **Training Time**: Computational efficiency measure
 
 ### Libraries Used
 
--   pandas
--   numpy
--   matplotlib
--   scikit-learn
+- pandas
+- numpy
+- matplotlib
+- scikit-learn
 
 ### Models Implemented
 
 #### 1. Random Forest Regression
 
--   **Hyperparameter Tuning**: Randomized Search CV with 200 iterations
--   **Best Parameters**: 500 estimators, max_depth=9, min_samples_split=2, min_samples_leaf=1
--   **Performance**:
-    -   MSE: 22.67
-    -   MAPE: 99.62%
-    -   Training Score: 99.97%
-    -   Testing Score: 99.85%
-    -   Training Time: 100.06s
+- **Hyperparameter Tuning**: Randomized Search CV with 200 iterations
+- **Best Parameters**: 500 estimators, max_depth=9, min_samples_split=2, min_samples_leaf=1
+- **Performance**:
+    - MSE: 22.67
+    - MAPE: 99.62%
+    - Training Score: 99.97%
+    - Testing Score: 99.85%
+    - Training Time: 100.06s
 
 #### 2. Polynomial Regression (with Elastic Net Regularization)
 
--   **Best Degree**: 1 (linear relationship)
--   **Regularization**: Elastic Net (α=1.0, l1_ratio=0.5)
--   **Performance**:
-    -   MSE: 15.42 (Best)
-    -   MAPE: 99.62%
-    -   Training Score: 99.88%
-    -   Testing Score: 99.90%
-    -   Training Time: 0.37s (Fastest)
+- **Best Degree**: 1 (linear relationship)
+- **Regularization**: Elastic Net (α=1.0, l1_ratio=0.5)
+- **Performance**:
+    - MSE: 15.42 (Best)
+    - MAPE: 99.62%
+    - Training Score: 99.88%
+    - Testing Score: 99.90%
+    - Training Time: 0.37s (Fastest)
 
 #### 3. AdaBoost Regression
 
--   **Base Estimator**: Best Random Forest model
--   **N Estimators**: 50
--   **Performance**:
-    -   MSE: 22.70
-    -   MAPE: 99.62% (Best)
-    -   Training Score: 99.98%
-    -   Testing Score: 99.85%
-    -   Training Time: 48.17s
+- **Base Estimator**: Best Random Forest model
+- **N Estimators**: 50
+- **Performance**:
+    - MSE: 22.70
+    - MAPE: 99.62% (Best)
+    - Training Score: 99.98%
+    - Testing Score: 99.85%
+    - Training Time: 48.17s
 
 ## Usage
 
 1. **Clone the repository**:
 
     ```bash
-    git clone https://gitlab.com/Momad-Y/nflx-stock-price-prediction.git
+    git clone https://github.com/Momad-Y/NFLX-Stock-Price-Prediction.git
     ```
 
 2. **Navigate to the project directory**:
@@ -135,10 +159,10 @@ _Comparison of all three models (Random Forest, Polynomial Regression, and AdaBo
 
 ### Key Results
 
--   **Best Overall Model**: Polynomial Regression (lowest MSE: 15.42)
--   **Fastest Model**: Polynomial Regression (0.37s training time)
--   **Most Accurate MAPE**: AdaBoost (99.62%)
--   **All models achieved >99.6% accuracy** in predicting stock prices
+- **Best Overall Model**: Polynomial Regression (lowest MSE: 15.42)
+- **Fastest Model**: Polynomial Regression (0.37s training time)
+- **Most Accurate MAPE**: AdaBoost (99.62%)
+- **All models achieved >99.6% accuracy** in predicting stock prices
 
 ### Model Performance Summary
 
@@ -168,8 +192,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## References
 
--   [Yahoo Finance](https://finance.yahoo.com/) for providing the stock data
--   [scikit-learn](https://scikit-learn.org/) for providing the machine learning models
--   [pandas](https://pandas.pydata.org/) for providing the data manipulation and analysis
--   [numpy](https://numpy.org/) for providing the numerical computing
--   [matplotlib](https://matplotlib.org/) for providing the data visualization
+- [Yahoo Finance](https://finance.yahoo.com/) for providing the stock data
+- [scikit-learn](https://scikit-learn.org/) for providing the machine learning models
+- [pandas](https://pandas.pydata.org/) for providing the data manipulation and analysis
+- [numpy](https://numpy.org/) for providing the numerical computing
+- [matplotlib](https://matplotlib.org/) for providing the data visualization
