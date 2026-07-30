@@ -163,8 +163,4 @@ cython_debug/
 .vscode/
 
 # Others
-Old/
 *.docx
-*.pdf
-*.rar
-Rubrics.txt
